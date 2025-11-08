@@ -39,3 +39,27 @@
 
 # debug information files
 *.dwo
+
+# Windows specific
+*.exe
+*.obj
+*.dll
+*.lib
+.vs/
+x64/
+x86/
+*.vcxproj
+*.vcxproj.filters
+*.sln
+*.user
+Thumbs.db
+desktop.ini
+
+# Build directories
+build/
+cmake-build-*/
+out/
+
+# Log files
+*.log
+trading_system.log
