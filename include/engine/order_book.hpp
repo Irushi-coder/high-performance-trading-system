@@ -158,6 +158,20 @@ public:
         return total;
     }
 
+    // Get the front order from best bid
+    std::shared_ptr<Order> getBestBidOrder() {
+        if (bids_.empty()) return nullptr;
+        auto& level = bids_.begin()->second;
+        return level.getFrontOrder();
+    }
+
+    // Get the front order from best ask
+    std::shared_ptr<Order> getBestAskOrder() {
+        if (asks_.empty()) return nullptr;
+        auto& level = asks_.begin()->second;
+        return level.getFrontOrder();
+    }
+
     // Get market depth (top N levels on each side)
     struct DepthLevel {
         Price price;

@@ -57,8 +57,20 @@ add_executable(test_order_book
     ${UTILS_SOURCES}
 )
 
+# Matching Engine Test executable (Phase 3)
+add_executable(test_matching_engine
+    src/test_matching_engine.cpp
+    ${CORE_SOURCES}
+    ${ENGINE_SOURCES}
+    ${UTILS_SOURCES}
+)
+
 # Link libraries
 target_link_libraries(trading_system
+    pthread
+)
+
+target_link_libraries(test_order_book
     pthread
 )
 
