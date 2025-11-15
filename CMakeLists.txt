@@ -40,12 +40,20 @@ set(UTILS_SOURCES
     src/utils/timer.cpp
 )
 
-# Main executable
+# Main executable (Phase 1)
 add_executable(trading_system
     src/main.cpp
     ${CORE_SOURCES}
     ${ENGINE_SOURCES}
     ${NETWORK_SOURCES}
+    ${UTILS_SOURCES}
+)
+
+# Order Book Test executable (Phase 2)
+add_executable(test_order_book
+    src/test_order_book.cpp
+    ${CORE_SOURCES}
+    ${ENGINE_SOURCES}
     ${UTILS_SOURCES}
 )
 
