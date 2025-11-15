@@ -20,35 +20,31 @@ A low-latency order matching engine built with modern C++17, designed for financ
 
 
 
-\## 📋 Current Status: Phase 1 Complete
+## 📋 Current Status: Phase 2 Complete
 
+### ✅ Phase 1: Foundation
+- Core type definitions
+- Order class with lifecycle management
+- High-precision timing utilities
+- Thread-safe logging system
 
+### ✅ Phase 2: Order Book (COMPLETE)
+- PriceLevel with FIFO queue management
+- OrderBook with bid/ask sides
+- Add/Cancel/Modify operations
+- Market depth calculation and display
+- O(1) best bid/ask access
+- O(1) order lookup with hash map
 
-\### ✅ Implemented Features
-
-
-
-\- Core type definitions (Order, Price, Quantity)
-
-\- Order class with full lifecycle management
-
-\- High-precision timer and latency measurement
-
-\- Thread-safe logging system
-
-\- CMake build system
-
-\- Basic order matching logic
+### 🚧 Phase 3: Matching Engine (Next)
+- Market order matching
+- Limit order matching
+- Trade execution and fills
 
 
 
 \### 🚧 Upcoming Phases
 
-
-
-\- \*\*Phase 2\*\*: Order Book implementation (Price levels, FIFO queues)
-
-\- \*\*Phase 3\*\*: Matching Engine (Market/Limit order matching)
 
 \- \*\*Phase 4\*\*: Performance optimization (Lock-free structures, memory pools)
 
