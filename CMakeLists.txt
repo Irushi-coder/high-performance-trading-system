@@ -65,12 +65,24 @@ add_executable(test_matching_engine
     ${UTILS_SOURCES}
 )
 
+# Performance Test executable (Phase 4)
+add_executable(test_performance
+    src/test_performance.cpp
+    ${CORE_SOURCES}
+    ${ENGINE_SOURCES}
+    ${UTILS_SOURCES}
+)
+
 # Link libraries
 target_link_libraries(trading_system
     pthread
 )
 
 target_link_libraries(test_order_book
+    pthread
+)
+
+target_link_libraries(test_matching_engine
     pthread
 )
 
