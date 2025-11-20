@@ -82,6 +82,14 @@ add_executable(test_network
     ${UTILS_SOURCES}
 )
 
+# Production Test executable (Phase 6)
+add_executable(test_production
+    src/test_production.cpp
+    ${CORE_SOURCES}
+    ${ENGINE_SOURCES}
+    ${UTILS_SOURCES}
+)
+
 # Link libraries
 target_link_libraries(trading_system
     pthread
