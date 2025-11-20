@@ -90,6 +90,15 @@ add_executable(test_production
     ${UTILS_SOURCES}
 )
 
+# Dashboard Server (Web UI)
+add_executable(dashboard_server
+    src/dashboard_server.cpp
+    ${CORE_SOURCES}
+    ${ENGINE_SOURCES}
+    ${NETWORK_SOURCES}
+    ${UTILS_SOURCES}
+)
+
 # Link libraries
 target_link_libraries(trading_system
     pthread
@@ -112,6 +121,20 @@ if(WIN32)
     target_link_libraries(test_network pthread ws2_32)
 else()
     target_link_libraries(test_network pthread)
+endif()
+
+# Production test
+if(WIN32)
+    target_link_libraries(test_production pthread)
+else()
+    target_link_libraries(test_production pthread)
+endif()
+
+# Dashboard server needs ws2_32 on Windows
+if(WIN32)
+    target_link_libraries(dashboard_server ws2_32 pthread)
+else()
+    target_link_libraries(dashboard_server pthread)
 endif()
 
 # Testing
