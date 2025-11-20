@@ -73,6 +73,15 @@ add_executable(test_performance
     ${UTILS_SOURCES}
 )
 
+# Network Test executable (Phase 5)
+add_executable(test_network
+    src/test_network.cpp
+    ${CORE_SOURCES}
+    ${ENGINE_SOURCES}
+    ${NETWORK_SOURCES}
+    ${UTILS_SOURCES}
+)
+
 # Link libraries
 target_link_libraries(trading_system
     pthread
@@ -85,6 +94,17 @@ target_link_libraries(test_order_book
 target_link_libraries(test_matching_engine
     pthread
 )
+
+target_link_libraries(test_performance
+    pthread
+)
+
+# Network test needs ws2_32 on Windows
+if(WIN32)
+    target_link_libraries(test_network pthread ws2_32)
+else()
+    target_link_libraries(test_network pthread)
+endif()
 
 # Testing
 enable_testing()
